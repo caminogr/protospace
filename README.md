@@ -11,18 +11,18 @@ profile
 
 ###reviews
 text  
-users_id  
-prototypes_id  
+user_id  
+prototype_id  
 
 ###prototypes
 title  
 catchcopy  
 concept  
 
-###photos
-prototypes_id  
+###prototype_photos
+prototype_id  
 image  
-show_place  
+status  
 
 ###tags
 name  
@@ -32,5 +32,5 @@ prototypes_id
 tags_id  
 
 ###likes
-users_id  
-prototypes_id  
+user_id  
+prototype_id  
