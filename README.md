@@ -1,28 +1,28 @@
 # protospace
 #DatabaseDesign
 
-##users
-username
-email
-password
-image
-member
-profile
-review_id
+###users
+username  
+email  
+password  
+image  
+member  
+profile 
+review_id 
 
-##reviews
-text
+###reviews
+text  
 
-##prototypes
-title
-image
-catchcopy
-concept
-review_id
+###prototypes
+title  
+image  
+catchcopy  
+concept  
+review_id  
 
-##tags
-name
+###tags
+name  
 
-##prototypes_tags
-prototypes_id
-tags_id
+###prototypes_tags
+prototypes_id  
+tags_id  
