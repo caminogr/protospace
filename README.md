@@ -22,6 +22,7 @@ concept
 ###photos
 prototypes_id  
 image  
+show_place  
 
 ###tags
 name  
