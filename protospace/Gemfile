@@ -45,8 +45,5 @@ end
 
 gem 'haml-rails'
 gem 'erb2haml'
-<<<<<<< HEAD
 gem 'devise'
-=======
 gem 'bootstrap-sass'
->>>>>>> 2196de5a451a3dfdd4082a4c1cd13abfe8c3bdbf
