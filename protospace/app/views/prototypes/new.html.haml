@@ -4,18 +4,23 @@
       .col-md-12
         = f.text_field :title, placeholder: "Title", class: "proto-new-title"
     .row
-    = f.fields_for :prototype_photos do |pf|
       .col-md-12
         .cover-image-upload
-          = pf.file_field :image
+          = f.fields_for :prototype_photos do |pf|
+            = pf.file_field :image
+            = pf.hidden_field :status, value: "main"
       .col-md-12
         %ul.proto-sub-list.list-group
           %li.list-group-item.col-md-4
             .image-upload
-              = pf.file_field :image
+              = f.fields_for :prototype_photos do |pf|
+                = pf.file_field :image
+                = pf.hidden_field :status, value: "sub_0"
           %li.list-group-item.col-md-4
             .image-upload
-              = pf.file_field :image
+              = f.fields_for :prototype_photos do |pf|
+                = pf.file_field :image
+                = pf.hidden_field :status, value: "sub_1"
           %li.list-group-item.col-md-4
             .image-upload-plus
               %span +
