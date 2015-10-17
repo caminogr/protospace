@@ -414,7 +414,7 @@ body {
   }
   
   .cover-image-upload {
-    background: url("noimage-big.png") #fff no-repeat center center;
+    background: image-url("noimage-big.png") #fff no-repeat center center;
     height: 500px;
     position: relative;
     margin-bottom: 20px;
@@ -437,7 +437,7 @@ body {
     margin-bottom: 20px;
     
     .image-upload {
-      background: url("noimage.png") #fff no-repeat center center;
+      background: image-url("noimage.png") #fff no-repeat center center;
       height: 200px;
       position: relative;
       
