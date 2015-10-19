@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   resources :prototypes, only: [:index, :new]
   resources :users, only: [:index, :new, :edit]
-  resources :login, only: [:index]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
