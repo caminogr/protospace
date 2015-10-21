@@ -5,7 +5,7 @@
 username  
 email  
 password  
-image  
+avatar  
 member  
 profile  
 works  
