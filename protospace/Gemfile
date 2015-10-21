@@ -48,3 +48,4 @@ gem 'erb2haml'
 gem 'devise'
 gem 'bootstrap-sass'
 gem "carrierwave"
+gem 'pry-rails'
