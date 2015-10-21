@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'top#index'
 
-  resources :prototypes, only: [:index, :new]
+  resources :prototypes, only: [:index, :new, :create]
   resources :users, only: [:index, :new, :edit]
   resources :login, only: [:index]
 
