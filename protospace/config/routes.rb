@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'top#index'
-
   resources :prototypes, only: [:index, :new]
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
