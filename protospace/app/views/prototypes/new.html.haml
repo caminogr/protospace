@@ -15,12 +15,12 @@
             .image-upload
               = f.fields_for :prototype_photos do |pf|
                 = pf.file_field :image
-                = pf.hidden_field :status, value: "sub_0"
+                = pf.hidden_field :status, value: "sub"
           %li.list-group-item.col-md-4
             .image-upload
               = f.fields_for :prototype_photos do |pf|
                 = pf.file_field :image
-                = pf.hidden_field :status, value: "sub_1"
+                = pf.hidden_field :status, value: "sub"
           %li.list-group-item.col-md-4
             .image-upload-plus
               %span +
