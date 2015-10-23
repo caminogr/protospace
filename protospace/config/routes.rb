@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, only: :show
   root 'top#index'
 
   resources :prototypes, only: [:index, :new, :create]
-  resources :users, only: [:index, :new, :edit]
-  resources :login, only: [:index]
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
