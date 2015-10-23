@@ -17,12 +17,12 @@
     -@prototypes.each do |proto|
       .col-sm-4.col-md-3.proto-content
         .thumbnail
-          = link_to image_tag("#{proto.prototype_photos.main.first.image}")
+          = link_to image_tag("#{proto.prototype_photos.main.first.image}"), prototype_path(proto)
           .caption
             %h3 Salvation Army on iPad App Wireframe
             .proto-meta
               .proto-user
-                = link_to "by #{proto.user.username}"
+                = link_to "by #{proto.user.username}", user_path(proto.user)
               .proto-posted
                 Apr 26
             %ul.proto-tag-list.list-inline
