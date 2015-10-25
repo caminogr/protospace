@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   root 'top#index'
 
-  resources :prototypes, only: [:new, :create, :show]
+  resources :prototypes, only: [:show, :new, :create]
 
 
   # Example of regular route:
