@@ -8,6 +8,7 @@ class PrototypesController < ApplicationController
 
   def create
     @prototype = Prototype.new(create_params)
+    @prototype.prototype_photos.build
     if @prototype.save
       redirect_to :root
     else
