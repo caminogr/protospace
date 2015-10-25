@@ -1,7 +1,6 @@
 class PrototypesController < ApplicationController
-  before_action :authenticate_user!, exept: :index
-
-  def index
+  before_action :authenticate_user!, exept: :show
+  def show
   end
   def new
     @prototype = Prototype.new
