@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :authenticate_user!, exept: :show
+  before_action :authenticate_user!, except: [:show]
   def show
   end
   def new
