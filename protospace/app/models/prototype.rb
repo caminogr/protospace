@@ -1,4 +1,5 @@
 class Prototype < ActiveRecord::Base
+  belongs_to :user
   has_many :prototype_photos
   belongs_to :user
   accepts_nested_attributes_for :prototype_photos, reject_if: :no_blank?

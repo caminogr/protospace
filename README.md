@@ -5,9 +5,12 @@
 username  
 email  
 password  
-image  
+avatar  
 member  
 profile  
+works  
+
+
 
 ###reviews
 text  
@@ -15,6 +18,7 @@ user_id
 prototype_id  
 
 ###prototypes
+user_id  
 title  
 catchcopy  
 concept  

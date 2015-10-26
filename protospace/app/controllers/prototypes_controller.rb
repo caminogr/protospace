@@ -1,5 +1,7 @@
 class PrototypesController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
   def show
+    @prototype = Prototype.find(params[:id])
   end
   def new
     @prototype = Prototype.new
