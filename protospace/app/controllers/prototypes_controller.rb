@@ -22,7 +22,7 @@ class PrototypesController < ApplicationController
   end
 
   def update
-    
+    redirect_to :root and return
   end
 
   private
