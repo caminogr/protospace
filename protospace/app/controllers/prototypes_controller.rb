@@ -16,6 +16,10 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def edit
+    
+  end
+
   private
   def create_params
     params.require(:prototype).permit(:title, :catchcopy, :concept, prototype_photos_attributes: [:prototype_id, :status, :image])
