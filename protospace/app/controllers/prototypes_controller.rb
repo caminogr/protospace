@@ -22,7 +22,8 @@ class PrototypesController < ApplicationController
   end
 
   def update
-    redirect_to :root and return
+    @prototype = Prototype.find(params[:id])
+      redirect_to :root and return
   end
 
   private
