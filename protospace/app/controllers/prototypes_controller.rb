@@ -31,6 +31,7 @@ class PrototypesController < ApplicationController
   end
 
     def destroy
+      redirect_to :root and return
     end
 
   private
