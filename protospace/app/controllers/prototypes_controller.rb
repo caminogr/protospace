@@ -9,7 +9,7 @@ class PrototypesController < ApplicationController
   end
 
   def create
-  if  Prototype.create(create_params)
+  if  Prototype.create(prototype_params)
     redirect_to :root and return
     else
       render :new
@@ -22,7 +22,7 @@ class PrototypesController < ApplicationController
 
   def update
     @prototype = Prototype.find(params[:id])
-    if @prototype.update(create_params)
+    if @prototype.update(prototype_params)
       redirect_to :root and return
     else
       render :new
@@ -35,7 +35,7 @@ class PrototypesController < ApplicationController
   end
 
   private
-  def create_params
+  def prototype_params
     params.require(:prototype).permit(:title, :catchcopy, :concept, prototype_photos_attributes: [:id, :prototype_id, :status, :image])
   end
 end
