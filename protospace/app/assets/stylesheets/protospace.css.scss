@@ -289,6 +289,12 @@ body {
 }
 
 .proto-content {
+  .drop_menu_location{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+
   .thumbnail {
     border-radius: 0;
     padding: 0;
