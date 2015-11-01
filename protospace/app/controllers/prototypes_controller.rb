@@ -1,6 +1,6 @@
 class PrototypesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  before_action :the_prototype, only: [:show, :edit, :update, :destroy]
+  before_action :set_prototype, only: [:show, :edit, :update, :destroy]
   def show
     @prototype
   end
@@ -35,7 +35,7 @@ class PrototypesController < ApplicationController
   end
 
   private
-  def the_prototype
+  def set_prototype
     @prototype = Prototype.find(params[:id])
   end
   def prototype_params
