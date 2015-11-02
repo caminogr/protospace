@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   root 'top#index'
   resources :prototypes, only: [:show, :new, :create]
+  resources :likes, only: [:create]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
