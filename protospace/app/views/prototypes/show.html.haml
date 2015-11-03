@@ -12,7 +12,7 @@
             %span.degree #{@prototype.user.works}
 
     .col-md-6.text-right
-      = link_to likes_path, method: :post do
+      = link_to likes_path, method: :post, remote: :true do
         %button.btn.btn-default
           = image_tag("icon_heart.svg")
           Like
