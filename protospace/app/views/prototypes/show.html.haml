@@ -13,13 +13,13 @@
 
     .col-md-6.text-right
       -if @like
-        = link_to prototype_like_path(@prototype.id, @like), method: :delete do
+        = link_to prototype_like_path(@prototype.id, @like), method: :delete, remote: :true do
           %button.btn.btn-default#like-button
             = image_tag("icon_heart.svg")
             Like
             %span.num#like-sum #{@prototype.likes_count}
       -else
-        = link_to prototype_likes_path(@prototype.id), method: :post do
+        = link_to prototype_likes_path(@prototype.id), method: :post, remote: :true do
           %button.btn.btn-default#like-button
             = image_tag("icon_heart.svg")
             Like
