@@ -3,4 +3,8 @@ class LikesController < ApplicationController
     @like = current_user.likes.create(prototype_id: params[:prototype_id])
     redirect_to prototype_path(params[:prototype_id])
   end
+
+  def destroy
+    
+  end
 end
