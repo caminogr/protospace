@@ -1,7 +1,8 @@
 class LikesController < ApplicationController
   def create
-    @like = current_user.likes.create(prototype_id: params[:prototype_id])
+    current_user.likes.create(prototype_id: params[:prototype_id])
     @prototype = Prototype.find(params[:prototype_id])
+    @like = current_user.likes.find_by(prototype_id: @prototype.id)
   end
 
   def destroy
