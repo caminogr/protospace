@@ -3,6 +3,7 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
   def show
     @prototype
+    @like = current_user.likes.find_by(prototype_id: @prototype.id)
   end
   def new
     @prototype = Prototype.new
