@@ -6,5 +6,6 @@ class LikesController < ApplicationController
 
   def destroy
     Like.find(params[:id]).destroy
+    redirect_to prototype_path(params[:prototype_id])
   end
 end
