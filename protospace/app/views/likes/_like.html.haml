@@ -1,7 +1,7 @@
 -if @like
   = link_to prototype_like_path(@prototype.id, @like), id: "like-button", method: :delete, remote: :true do
     %button.btn.btn-default
-      = image_tag("icon_heart.svg")
+      = image_tag("icon_heart_red.svg")
       Like
       %span.num#like-sum #{@prototype.likes_count}
 -else
