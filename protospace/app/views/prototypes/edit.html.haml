@@ -1,8 +1,4 @@
 =form_for(@prototype, html: {class: "container proto-new"}) do |f|
-  -if @prototype.errors.any?
-    .alert.alert-danger
-      -@prototype.errors.full_messages.each do |message|
-        %li= message
   .col-md-8.col-md-offset-2
     %header.row.user-nav.row
       .col-md-12
