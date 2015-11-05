@@ -3,6 +3,7 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
   def show
     @prototype
+    @comment = Comment.new
   end
   def new
     @prototype = Prototype.new
