@@ -56,7 +56,7 @@
             %p
             %p #{comment.text}
       - if user_signed_in?
-        =form_for([@prototype, @comment], class: "form-inline", role: :form) do |f|
+        =form_for([@prototype, @comment], class: "form-inline", role: :form, remote: :true) do |f|
           %h4 Write a comment
           .row
             .form-group.col-md-10
