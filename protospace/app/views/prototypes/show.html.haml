@@ -3,12 +3,12 @@
     .col-md-6
       .media
         .media-left
-          =link_to image_tag("@prototype.user.avatar", class: :"media-object", alt: :"64x64", :"data-holder-rendered" => "true", :"data-src" => "holder.js/64x64", style: :"width: 64px; height: 64px;"), user_path(@prototype.user)
+          = link_to image_tag("@prototype.user.avatar", class: :"media-object", alt: :"64x64", :"data-holder-rendered" => "true", :"data-src" => "holder.js/64x64", style: :"width: 64px; height: 64px;"), user_path(@prototype.user)
         .media-body
           %h4#top-aligned-media.media-heading
             Top aligned media
           .proto-user
-            =link_to "by #{@prototype.user.username}",user_path(@prototype.user)
+            = link_to "by #{@prototype.user.username}",user_path(@prototype.user)
             %span.degree #{@prototype.user.works}
 
     .col-md-6.text-right
@@ -36,21 +36,21 @@
       %h4 Tag List
       %ul.proto-tag-list.list-inline
         %li
-          =link_to "iPad", "#", class: :"btn btn-default"
+          = link_to "iPad", "#", class: :"btn btn-default"
         %li 
-          =link_to "wireframe", "#", class: :"btn btn-default"
+          = link_to "wireframe", "#", class: :"btn btn-default"
   .row.proto-comments
     %h4.col-md-12
       Comments
       %span.num#comments_sum (#{@prototype.comments.count})
     .col-md-8
       #comment_list
-        =render partial: "comments/comment", collection: @prototype.comments
+        = render partial: "comments/comment", collection: @prototype.comments
       - if user_signed_in?
-        =form_for([@prototype, @comment], class: "form-inline", role: :form, remote: :true) do |f|
+        = form_for([@prototype, @comment], class: "form-inline", role: :form, remote: :true) do |f|
           %h4 Write a comment
           .row
             .form-group.col-md-10
-              =f.text_area :text, class: "form-control", placeholder: "Your comments", rows: "3"
+              = f.text_area :text, class: "form-control", placeholder: "Your comments", rows: "3"
             .form-group.col-md-2
-              =f.submit "Comment", class: "btn btn-primary"
+              = f.submit "Comment", class: "btn btn-primary"
