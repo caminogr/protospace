@@ -44,7 +44,8 @@
       Comments
       %span.num (#{@prototype.comments.count})
     .col-md-8
-      =render partial: "comments/comment", collection: @prototype.comments
+      #comment_list
+        =render partial: "comments/comment", collection: @prototype.comments
       - if user_signed_in?
         =form_for([@prototype, @comment], class: "form-inline", role: :form, remote: :true) do |f|
           %h4 Write a comment
