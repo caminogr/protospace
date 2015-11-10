@@ -44,17 +44,7 @@
       Comments
       %span.num (#{@prototype.comments.count})
     .col-md-8
-      -@prototype.comments.each do |comment|
-        .media
-          .media-left
-            =link_to image_tag("comment.user.avatar", class: :"media-object", alt: :"64x64", :"data-holder-rendered" => "true", :"data-src" => "holder.js/64x64", style: :"width: 64px; height: 64px;")
-          .media-body
-            %h4#top-aligned-media.media-heading
-              #{comment.user.username}
-              =link_to "", "#top-aligned-media", class: :"anchorjs-link"
-              %span.anchorjs-icon
-            %p
-            %p #{comment.text}
+      =render partial: "comments/comment", collection: @prototype.comments
       - if user_signed_in?
         =form_for([@prototype, @comment], class: "form-inline", role: :form, remote: :true) do |f|
           %h4 Write a comment
