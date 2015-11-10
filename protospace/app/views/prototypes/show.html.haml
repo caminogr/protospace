@@ -42,7 +42,7 @@
   .row.proto-comments
     %h4.col-md-12
       Comments
-      %span.num (10)
+      %span.num (#{@prototype.comments.count})
     .col-md-8
       -@prototype.comments.each do |comment|
         .media
