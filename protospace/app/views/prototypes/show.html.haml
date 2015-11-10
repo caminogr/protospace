@@ -42,7 +42,7 @@
   .row.proto-comments
     %h4.col-md-12
       Comments
-      %span.num (#{@prototype.comments.count})
+      %span.num#comments_sum (#{@prototype.comments.count})
     .col-md-8
       #comment_list
         =render partial: "comments/comment", collection: @prototype.comments
