@@ -47,7 +47,7 @@
       #comment_list
         = render partial: "comments/comment", collection: @prototype.comments
       - if user_signed_in?
-        = form_for([@prototype, @comment], html: {class: "form-inline", role: :form, remote: :true}) do |f|
+        = form_for([@prototype, @comment], remote: true, html: {class: "form-inline", role: :form}) do |f|
           %h4 Write a comment
           .row
             .form-group.col-md-10
