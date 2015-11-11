@@ -3,7 +3,7 @@
     .col-md-6
       .media
         .media-left
-          = link_to image_tag("@prototype.user.avatar", class: :"media-object", alt: :"64x64", :"data-holder-rendered" => "true", :"data-src" => "holder.js/64x64", style: :"width: 64px; height: 64px;"), user_path(@prototype.user)
+          = link_to image_tag("@prototype.user.avatar", class: "media-object", alt: "64x64", :"data-holder-rendered" => "true", :"data-src" => "holder.js/64x64", style: "width: 64px; height: 64px;"), user_path(@prototype.user)
         .media-body
           %h4#top-aligned-media.media-heading
             Top aligned media
@@ -18,12 +18,12 @@
         %span.num 20
   .row
     .col-md-9
-      = image_tag("#{@prototype.prototype_photos.main[0].image}", class: :'img-responsive')
+      = image_tag("#{@prototype.prototype_photos.main[0].image}", class: 'img-responsive')
     .col-md-3
       %ul.proto-sub-list.list-group
         - @prototype.prototype_photos.sub.each do |photo_sub|
           %li.list-group-item
-            = image_tag("#{photo_sub.image}", class: :'img-responsive')
+            = image_tag("#{photo_sub.image}", class: 'img-responsive')
 
   .row.proto-description
     .col-md-3
@@ -36,9 +36,9 @@
       %h4 Tag List
       %ul.proto-tag-list.list-inline
         %li
-          = link_to "iPad", "#", class: :"btn btn-default"
+          = link_to "iPad", "#", class: "btn btn-default"
         %li 
-          = link_to "wireframe", "#", class: :"btn btn-default"
+          = link_to "wireframe", "#", class: "btn btn-default"
   .row.proto-comments
     %h4.col-md-12
       Comments
