@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'top#index'
   resources :prototypes, except: [:index] do
      resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:create]
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

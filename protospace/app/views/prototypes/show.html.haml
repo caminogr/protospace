@@ -3,24 +3,24 @@
     .col-md-6
       .media
         .media-left
-          =link_to image_tag("@prototype.user.avatar", class: :"media-object", alt: :"64x64", :"data-holder-rendered" => "true", :"data-src" => "holder.js/64x64", style: :"width: 64px; height: 64px;"), user_path(@prototype.user)
+          = link_to image_tag("@prototype.user.avatar", class: "media-object", alt: "64x64", :"data-holder-rendered" => "true", :"data-src" => "holder.js/64x64", style: "width: 64px; height: 64px;"), user_path(@prototype.user)
         .media-body
           %h4#top-aligned-media.media-heading
             Top aligned media
           .proto-user
-            =link_to "by #{@prototype.user.username}",user_path(@prototype.user)
+            = link_to "by #{@prototype.user.username}",user_path(@prototype.user)
             %span.degree #{@prototype.user.works}
 
     .col-md-6.text-right
       = render "likes/like"
   .row
     .col-md-9
-      = image_tag("#{@prototype.prototype_photos.main[0].image}", class: :'img-responsive')
+      = image_tag("#{@prototype.prototype_photos.main[0].image}", class: 'img-responsive')
     .col-md-3
       %ul.proto-sub-list.list-group
         - @prototype.prototype_photos.sub.each do |photo_sub|
           %li.list-group-item
-            = image_tag("#{photo_sub.image}", class: :'img-responsive')
+            = image_tag("#{photo_sub.image}", class: 'img-responsive')
 
   .row.proto-description
     .col-md-3
@@ -33,29 +33,21 @@
       %h4 Tag List
       %ul.proto-tag-list.list-inline
         %li
-          =link_to "iPad", "#", class: :"btn btn-default"
+          = link_to "iPad", "#", class: "btn btn-default"
         %li 
-          =link_to "wireframe", "#", class: :"btn btn-default"
+          = link_to "wireframe", "#", class: "btn btn-default"
   .row.proto-comments
     %h4.col-md-12
       Comments
-      %span.num (10) 
+      %span.num#comments_sum (#{@prototype.comments.count})
     .col-md-8
-      .media
-        .media-left
-          =link_to image_tag("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnMvPjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjEzLjQ2MDkzNzUiIHk9IjMyIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9nPjwvc3ZnPg==", class: :"media-object", alt: :"64x64", :"data-holder-rendered" => "true", :"data-src" => "holder.js/64x64", style: :"width: 64px; height: 64px;")
-        .media-body
-          %h4#top-aligned-media.media-heading
-            Top aligned media
-            =link_to "", "#top-aligned-media", class: :"anchorjs-link"
-            %span.anchorjs-icon
-          %p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-          %p Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-
-      %form.form-inline{:role => "form"}
-        %h4 Write a comment
-        .row
-          .form-group.col-md-10
-            %textarea.form-control{:placeholder => "Your comments", :rows => "3"}
-          .form-group.col-md-2
-            %button.btn.btn-primary Comment
+      #comment_list
+        = render partial: "comments/comment", collection: @prototype.comments
+      - if user_signed_in?
+        = form_for([@prototype, @comment], remote: true, html: {class: "form-inline", role: :form}) do |f|
+          %h4 Write a comment
+          .row
+            .form-group.col-md-10
+              = f.text_area :text, class: "form-control", placeholder: "Your comments", rows: "3"
+            .form-group.col-md-2
+              = f.submit "Comment", class: "btn btn-primary"
