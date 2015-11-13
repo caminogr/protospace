@@ -29,7 +29,7 @@ image
 status  
 
 ###tags
-name  
+tag_name  
 
 ###prototypes_tags
 prototypes_id  
