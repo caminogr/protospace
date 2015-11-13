@@ -1,7 +1,9 @@
 class PrototypesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
+  before_action :set_prototype, only: [:show, :edit, :update, :destroy]
   def show
-    @prototype = Prototype.find(params[:id])
+    @prototype
+    @comment = Comment.new
   end
   def new
     @prototype = Prototype.new
@@ -9,15 +11,37 @@ class PrototypesController < ApplicationController
   end
 
   def create
-  if  Prototype.create(create_params)
-    redirect_to :root and return
+    @prototype = current_user.prototypes.new(create_params)
+    if @prototype.save
+      redirect_to :root
+    else
+      @prototype.prototype_photos.build
+      render :new
+    end
+  end
+
+  def edit
+    @prototype
+  end
+
+  def update
+    if @prototype.update(prototype_params)
+      redirect_to :root and return
     else
       render :new
     end
   end
 
+  def destroy
+    @prototype.destroy
+    redirect_to :root and return
+  end
+
   private
-  def create_params
-    params.require(:prototype).permit(:title, :catchcopy, :concept, prototype_photos_attributes: [:prototype_id, :status, :image])
+  def set_prototype
+    @prototype = Prototype.find(params[:id])
+  end
+  def prototype_params
+    params.require(:prototype).permit(:title, :catchcopy, :concept, prototype_photos_attributes: [:id, :prototype_id, :status, :image])
   end
 end

@@ -12,7 +12,7 @@ works
 
 
 
-###reviews
+###comments
 text  
 user_id  
 prototype_id  
