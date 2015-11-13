@@ -10,7 +10,7 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    @prototype = current_user.prototypes.new(create_params)
+    @prototype = current_user.prototypes.new(prototype_params)
     if @prototype.save
       redirect_to :root
     else
@@ -41,6 +41,6 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.find(params[:id])
   end
   def prototype_params
-    params.require(:prototype).permit(:title, :catchcopy, :concept, prototype_photos_attributes: [:id, :prototype_id, :status, :image])
+    params.require(:prototype).permit(:title, :catchcopy, :concept, prototype_photos_attributes: [:id, :prototype_id, :status, :image]).merge(tag_list: params[:prototype][:tag])
   end
 end
