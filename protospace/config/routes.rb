@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   root 'top#index'
   resources :prototypes, except: [:index] do
+     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
   # Example of regular route:
