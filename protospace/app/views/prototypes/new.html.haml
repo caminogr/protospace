@@ -12,6 +12,7 @@
         .cover-image-upload
           = f.fields_for :prototype_photos do |pf|
             = pf.file_field :image
+            = image_tag (), id: :main_preview
             = pf.hidden_field :status, value: "main"
       .col-md-12
         %ul.proto-sub-list.list-group
