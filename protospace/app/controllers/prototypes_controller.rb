@@ -4,6 +4,7 @@ class PrototypesController < ApplicationController
   def show
     @prototype
     @comment = Comment.new
+    @like = current_user.likes.find_by(prototype_id: @prototype.id)
   end
   def new
     @prototype = Prototype.new
