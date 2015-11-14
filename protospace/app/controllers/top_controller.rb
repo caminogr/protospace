@@ -1,5 +1,5 @@
 class TopController < ApplicationController
   def index
-    @prototypes = Prototype.order("id ASC")
+    @prototypes = Prototype.order("likes_count DESC")
   end
 end
