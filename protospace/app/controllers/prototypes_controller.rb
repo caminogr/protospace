@@ -1,15 +1,16 @@
 class PrototypesController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
   def index
     @prototypes = Prototype.order("likes_count DESC")
   end
-  
+
   def show
     @prototype
     @comment = Comment.new
     @like = current_user.likes.find_by(prototype_id: @prototype.id)
   end
+
   def new
     @prototype = Prototype.new
     @prototype.prototype_photos.build
