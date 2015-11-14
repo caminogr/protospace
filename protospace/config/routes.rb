@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
   root 'prototypes#index'
-  resources :prototypes, except: [:index] do
-     resources :likes, only: [:create, :destroy]
+  resources :prototypes do
+    resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
   # Example of regular route:
