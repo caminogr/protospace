@@ -1,6 +1,10 @@
 class PrototypesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
+  def index
+    @prototypes = Prototype.order("likes_count DESC")
+  end
+  
   def show
     @prototype
     @comment = Comment.new
