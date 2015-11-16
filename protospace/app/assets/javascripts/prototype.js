@@ -8,5 +8,9 @@ $(window).on("load", function(){
     }
     reader.readAsDataURL(file);
   });
+
+  $('add_new_form').on('click',function(){
+
+  });
 });
 
