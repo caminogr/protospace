@@ -5,6 +5,7 @@ $(window).on("load", function(){
     reader.onload = function(){
       $("#image_preview").attr('src', reader.result).css('display', 'inline');
     }
+    reader.readAsDataURL(file);
   });
 });
 
