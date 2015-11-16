@@ -9,8 +9,8 @@ $(window).on("load", function(){
     reader.readAsDataURL(file);
   });
 
-  $('add_new_form').on('click',function(){
-
+  $('#add_new_form').on('click',function(){
+    $(this).css('display', 'none');
   });
 });
 
