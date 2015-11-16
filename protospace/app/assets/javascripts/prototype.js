@@ -10,6 +10,7 @@ $(window).on("load", function(){
   });
 
   $('#add_new_form').on('click',function(){
+    $('.hide_form').css('display', 'list-item');
     $(this).css('display', 'none');
   });
 });
