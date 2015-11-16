@@ -436,6 +436,12 @@ body {
       filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
       cursor: pointer;
     }
+
+    img {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
   }
   
   .list-group-item {
@@ -458,6 +464,13 @@ body {
         filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
         cursor: pointer;
       }      
+
+      img {
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
+
     }
     
     .image-upload-plus {
