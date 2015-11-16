@@ -3,6 +3,7 @@ $(window).on("load", function(){
     var file = $(this).prop('files')[0];
     var reader = new FileReader();
     reader.onload = function(){
+      $("#image_preview").attr('src', reader.result)
     }
   });
 });
