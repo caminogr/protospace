@@ -6,7 +6,12 @@ $(window).on("load", function(){
   $('#add_new_form').on('click',function(){
     new_prototype(this);
   });
+
+  $('#add_sub_image_form').on('click',function(){
+    edit_prototype(this);
+  });
 });
+
 
 function post_prototype(element){
   var i = $('input[type=file]').index(element);
@@ -21,4 +26,8 @@ function post_prototype(element){
 function new_prototype(element){
   $('.hide_form').addClass('appear_form').removeClass('hide_form').css('display', 'list-item');
   $(element).css('display', 'none');
+}
+
+function edit_prototype(element){
+
 }
