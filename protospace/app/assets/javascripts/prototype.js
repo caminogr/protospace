@@ -29,5 +29,6 @@ function new_prototype(element){
 }
 
 function edit_prototype(element){
-  $('.list-group-item').addClass('appear_form').removeClass('hide_form').css('display', 'list-item');
+  index = $('.appear_form').length;
+  $('.list-group-item').eq(index).addClass('appear_form').removeClass('hide_form').css('display', 'list-item');
 }
