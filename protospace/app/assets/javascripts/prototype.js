@@ -29,5 +29,5 @@ function new_prototype(element){
 }
 
 function edit_prototype(element){
-
+  $('.list-group-item').addClass('appear_form').removeClass('hide_form').css('display', 'list-item');
 }
