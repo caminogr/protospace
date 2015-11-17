@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   root 'top#index'
   resources :prototypes, except: [:index]
-  resources :tags, only: [:show]
+  resources :tags, only: [:index, :show]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
