@@ -4,8 +4,7 @@ $(window).on("load", function(){
   });
 
   $('#add_new_form').on('click',function(){
-    $('.hide_form').addClass('appear_form').removeClass('hide_form').css('display', 'list-item');
-    $(this).css('display', 'none');
+    new_prototype(this);
   });
 });
 
@@ -17,4 +16,9 @@ function post_prototype(element){
     $("#image_preview" + i).attr('src', reader.result).css('display', 'inline');
     }
   reader.readAsDataURL(file);
+}
+
+function new_prototype(element){
+  $('.hide_form').addClass('appear_form').removeClass('hide_form').css('display', 'list-item');
+  $(element).css('display', 'none');
 }
