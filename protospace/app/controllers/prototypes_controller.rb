@@ -2,7 +2,7 @@ class PrototypesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
   def index
-    @prototypes = Prototype.order("likes_count DESC")
+    @prototypes = Prototype.order(likes_count: :desc)
   end
 
   def show
@@ -42,7 +42,7 @@ class PrototypesController < ApplicationController
   end
 
   def newest
-    @prototypes = Prototype.order("id DESC")
+    @prototypes = Prototype.order(id: :desc)
   end
 
   private
