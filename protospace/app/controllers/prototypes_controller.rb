@@ -6,7 +6,6 @@ class PrototypesController < ApplicationController
   end
 
   def show
-    @prototype
     @comment = Comment.new
     @like = current_user.likes.find_by(prototype_id: @prototype.id)
   end
@@ -27,7 +26,6 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    @prototype
   end
 
   def update
