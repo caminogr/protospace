@@ -31,4 +31,7 @@ function new_prototype(element){
 function edit_prototype(element){
   index = $('.appear_form').length;
   $('.list-group-item').eq(index).addClass('appear_form').removeClass('hide_form').css('display', 'list-item');
+  if(index == 2){
+    $(element).css('display', 'none');
+  }
 }
