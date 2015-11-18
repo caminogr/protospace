@@ -1,4 +1,4 @@
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: :"container user-new"}) do |f|
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "container user-new"}) do |f|
   .col-md-8.col-md-offset-2
     %header.row.user-nav.row
       .col-md-12
@@ -6,12 +6,12 @@
         .user-name_image.row
           .user-name.col-md-10
             = f.text_field :username, placeholder: :Username
-          .user-image.col-md-2{style: :'ackground-image: url(#{current_user.avatar});'}
+          .user-image.col-md-2{style: 'ackground-image: url(#{current_user.avatar});'}
             %button.btn.btn-primary Change image
             = f.file_field :avatar
-        = f.email_field :email, placeholder: :"E-Mail", class: :"user-email"
-        = f.password_field :password, placeholder: :Password, class: :"user-password"
-        = f.password_field :current_password, placeholder: :Current_Password, class: :"user-password"
+        = f.email_field :email, placeholder: "E-Mail", class: "user-email"
+        = f.password_field :password, placeholder: :Password, class: "user-password"
+        = f.password_field :current_password, placeholder: :Current_Password, class: "user-password"
       .col-md-12
         %h4 Member of
         .user-user-member.row
@@ -20,10 +20,10 @@
         %h4 Profile
         .user-user-profile.row
           .user-name.col-md-12
-            = f.text_area :profile, cols: :"30", rows: :"4", placeholder: :Profile
-        %h4 Works 
+            = f.text_area :profile, cols: "30", rows: "4", placeholder: :Profile
+        %h4 Works
         .user-name_image.row
           .user-name.col-md-12
-            = f.text_area :works, cols: :"30", rows: :"4", placeholder: :Works
+            = f.text_area :works, cols: "30", rows: "4", placeholder: :Works
     .row.text-center.user-btn
-      = f.submit "Save", class: :"btn btn-lg btn-primary btn-block"
+      = f.submit "Save", class: "btn btn-lg btn-primary btn-block"
