@@ -4,7 +4,6 @@ class TagsController < ApplicationController
   end
 
   def show
-    taggings = ActsAsTaggableOn::Tagging.where(tag_id: params[:id])
-    @prototypes = taggings.map{|tagging| tagging.taggable}
+    @prototypes = Prototype.tagged_with(params[:tag_name])
   end
 end
