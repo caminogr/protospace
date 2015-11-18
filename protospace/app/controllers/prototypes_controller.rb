@@ -41,10 +41,6 @@ class PrototypesController < ApplicationController
     redirect_to :root and return
   end
 
-  def newest
-    @prototypes = Prototype.order(id: :desc)
-  end
-
   private
   def set_prototype
     @prototype = Prototype.find(params[:id])
