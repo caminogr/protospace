@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
   root 'prototypes#index'
-  get '/prototypes/newest' => 'prototypes#newest'
+  resources :newest, only: [:index]
   resources :prototypes do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
