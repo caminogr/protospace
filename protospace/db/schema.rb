@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20151113100229) do
 
   add_index "prototypes", ["user_id"], name: "index_prototypes_on_user_id", using: :btree
 
+<<<<<<< HEAD
   create_table "prototypes_tags", force: :cascade do |t|
     t.integer  "prototypes_id", limit: 4
     t.integer  "tags_id",       limit: 4
@@ -75,6 +76,8 @@ ActiveRecord::Schema.define(version: 20151113100229) do
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
+=======
+>>>>>>> 5604209f8b23caa27c18c8082a1d38dbec9be95b
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,   default: "", null: false
     t.string   "encrypted_password",     limit: 255,   default: "", null: false

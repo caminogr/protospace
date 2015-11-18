@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
   root 'top#index'
-  resources :prototypes, except: [:index]
+  resources :prototypes, except: [:index] do
+    resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:create]
+  end
   resources :tags, only: [:index, :show]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
