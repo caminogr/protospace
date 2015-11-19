@@ -10,15 +10,13 @@
   .thumbnail
     = link_to image_tag("#{prototype.prototype_photos.main.first.image}"), prototype_path(prototype)
     .caption
-      %h3 Salvation Army on iPad App Wireframe
+      %h3 #{prototype.title}
       .proto-meta
         .proto-user
           = link_to "by #{prototype.user.username}", user_path(prototype.user)
         .proto-posted
           Apr 26
       %ul.proto-tag-list.list-inline
-        %li 
-
-          =link_to "iPad", class: "btn btn-default"
-        %li 
-          =link_to "wireframe", class: "btn btn-default"
+        - prototype.tags.each do |tag|
+          %li
+            = link_to tag.name, tag_path(tag.name), class: "btn btn-default"
