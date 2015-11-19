@@ -1,4 +1,4 @@
-$(window).on("load", function(){
+$(document).on("ready page:load", function(){
   $('input[type=file]').change(function(){
     post_prototype(this);
   });
