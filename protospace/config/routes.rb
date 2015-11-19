@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   root 'top#index'
   resources :prototypes, except: [:index] do
-     resources :likes, only: [:create, :destroy]
+    resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
+  resources :tags, only: [:index, :show], param: :tag_name
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
