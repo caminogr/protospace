@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
-  root 'top#index'
-  resources :prototypes, except: [:index] do
+  root 'prototypes#index'
+  resources :newest, only: [:index]
+  resources :prototypes do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
