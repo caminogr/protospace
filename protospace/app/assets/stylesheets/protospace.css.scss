@@ -436,6 +436,20 @@ body {
       filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
       cursor: pointer;
     }
+
+    img {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .appear_form{
+    display: block !important;
+  }
+
+  .hide_form{
+    display: none;
   }
   
   .list-group-item {
@@ -458,8 +472,14 @@ body {
         filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
         cursor: pointer;
       }      
+
+      img {
+        display: none;
+        width: 100%;
+        height: 100%;
+      }
     }
-    
+
     .image-upload-plus {
       height: 200px;
       width: 100%;
