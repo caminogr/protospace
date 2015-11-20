@@ -49,5 +49,6 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem "carrierwave"
 gem 'pry-rails'
+gem 'kaminari'
 gem 'acts-as-taggable-on'
 gem 'fog'
