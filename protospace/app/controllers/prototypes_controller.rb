@@ -1,17 +1,22 @@
 class PrototypesController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_prototype, only: [:show, :edit, :update, :destroy]
-  def show
-    @prototype
-    @comment = Comment.new
+  def index
+    @prototypes = Prototype.order(likes_count: :desc)
   end
+
+  def show
+    @comment = Comment.new
+    @like = current_user.likes.find_by(prototype_id: @prototype)
+  end
+
   def new
     @prototype = Prototype.new
     @prototype.prototype_photos.build
   end
 
   def create
-    @prototype = current_user.prototypes.new(create_params)
+    @prototype = current_user.prototypes.new(prototype_params)
     if @prototype.save
       redirect_to :root
     else
@@ -21,7 +26,6 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    @prototype
   end
 
   def update
@@ -42,6 +46,6 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.find(params[:id])
   end
   def prototype_params
-    params.require(:prototype).permit(:title, :catchcopy, :concept, prototype_photos_attributes: [:id, :prototype_id, :status, :image])
+    params.require(:prototype).permit(:title, :catchcopy, :concept, prototype_photos_attributes: [:id, :prototype_id, :status, :image]).merge(tag_list: params[:prototype][:tag])
   end
 end
