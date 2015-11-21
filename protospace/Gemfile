@@ -51,3 +51,5 @@ gem "carrierwave"
 gem 'pry-rails'
 gem 'kaminari'
 gem 'acts-as-taggable-on'
+gem 'fog'
+gem 'config'
